@@ -777,28 +777,104 @@
               </div>
               
               <div class="flex items-start">
+               
                 <div class="bg-indigo-100 p-3 rounded-full mr-4">
                   <i class="fas fa-envelope text-indigo-600"></i>
                 </div>
                 <div>
                   <h4 class="font-semibold">Email Us</h4>
-                  <p class="text-gray-600">
-  kabelosamkelo19@gmail.com
-  <span class="relative ml-1 align-super">
-    <button 
-      class="text-indigo-600 font-bold focus:outline-none tooltip-trigger" 
-      onclick="toggleTooltip(this)" 
-      aria-label="More info"
-    >
-      ?
-    </button>
-    <span class="tooltip hidden absolute left-1/2 -translate-x-1/2 mt-2 w-64 text-white text-xs rounded-lg px-3 py-2 z-50 animate-tooltip"
-          style="bottom: 100%;">
-      With your investment we can get a professional Gmail like info@linetech.co.za.
-    </span>
-  </span>
-</p>
-
+                    <p class="text-gray-600 relative group">
+                    <span id="contact-email" class="inline-block transition-colors duration-200 hover:text-indigo-600 focus:text-indigo-600 cursor-pointer">
+                      kabelosamkelo19@gmail.com
+                      <span class="relative group cursor-pointer ml-1 align-super">
+                      <span class="text-indigo-600 font-bold animate-pulse">?</span>
+                      </span>
+                    </span>
+                    <!-- Tooltip -->
+                    <span
+                      id="email-tooltip"
+                      class="absolute left-1/2 -translate-x-1/2 mt-2 w-64 bg-gray-900 text-white text-xs rounded-lg px-3 py-2 shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 z-50 scale-95 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:scale-100 border-2 border-indigo-400 animate-tooltipIn"
+                      style="bottom:100%;"
+                      tabindex="0"
+                    >
+                      <span class="inline-block animate-fadeInDown animate-delay-100">
+                      <span class="font-semibold text-indigo-400 animate-bounce">With your investment</span>
+                      <span class="block mt-1 animate-fadeInLeft">we can get a professional Gmail like <span class="underline decoration-indigo-400">info@linetech.co.za</span>.</span>
+                      </span>
+                    </span>
+                    </p>
+                    <script>
+                    // Tooltip for mobile: show on tap/click, hide on outside tap, auto-hide after 10s
+                    (function() {
+                      const email = document.getElementById('contact-email');
+                      const tooltip = document.getElementById('email-tooltip');
+                      let shown = false;
+                      let hideTimeout = null;
+                      function showTip() {
+                      tooltip.classList.add('opacity-100', 'pointer-events-auto', 'scale-100', 'animate-tooltipIn');
+                      tooltip.classList.remove('opacity-0', 'pointer-events-none', 'scale-95', 'animate-tooltipOut');
+                      shown = true;
+                      // Auto-hide after 10 seconds
+                      clearTimeout(hideTimeout);
+                      hideTimeout = setTimeout(() => {
+                        hideTip();
+                      }, 10000);
+                      }
+                      function hideTip() {
+                      tooltip.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100', 'animate-tooltipIn');
+                      tooltip.classList.add('opacity-0', 'pointer-events-none', 'scale-95', 'animate-tooltipOut');
+                      shown = false;
+                      clearTimeout(hideTimeout);
+                      }
+                      email.addEventListener('click', function(e) {
+                      e.stopPropagation();
+                      if (!shown) showTip(); else hideTip();
+                      });
+                      document.addEventListener('click', function(e) {
+                      if (shown && !email.contains(e.target)) hideTip();
+                      });
+                      // Keyboard accessibility
+                      email.addEventListener('keydown', function(e) {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        if (!shown) showTip(); else hideTip();
+                      }
+                      });
+                    })();
+                    </script>
+                    <style>
+                    /* Animations for tooltip text */
+                    @keyframes fadeInDown {
+                      from { opacity: 0; transform: translateY(-16px);}
+                      to { opacity: 1; transform: translateY(0);}
+                    }
+                    @keyframes fadeInLeft {
+                      from { opacity: 0; transform: translateX(-16px);}
+                      to { opacity: 1; transform: translateX(0);}
+                    }
+                    @keyframes tooltipIn {
+                      0% { opacity: 0; transform: scale(0.8) rotateX(-30deg);}
+                      60% { opacity: 1; transform: scale(1.05) rotateX(10deg);}
+                      100% { opacity: 1; transform: scale(1) rotateX(0);}
+                    }
+                    @keyframes tooltipOut {
+                      0% { opacity: 1; transform: scale(1) rotateX(0);}
+                      100% { opacity: 0; transform: scale(0.8) rotateX(-30deg);}
+                    }
+                    .animate-fadeInDown { animation: fadeInDown 0.4s cubic-bezier(.4,0,.2,1);}
+                    .animate-fadeInLeft { animation: fadeInLeft 0.5s cubic-bezier(.4,0,.2,1);}
+                    .animate-tooltipIn { animation: tooltipIn 0.5s cubic-bezier(.4,0,.2,1);}
+                    .animate-tooltipOut { animation: tooltipOut 0.3s cubic-bezier(.4,0,.2,1);}
+                    /* Effects: shadow, scale, border, and glow */
+                    #email-tooltip {
+                      box-shadow: 0 8px 32px 0 rgba(99,102,241,0.18), 0 2px 8px 0 rgba(0,0,0,0.08), 0 0 12px 2px #6366f1;
+                      transform: scale(0.95);
+                      border: 2px solid #6366f1;
+                      text-shadow: 0 2px 8px rgba(99,102,241,0.18);
+                      filter: drop-shadow(0 0 6px #a5b4fc);
+                    }
+                    #email-tooltip.scale-100 { transform: scale(1);}
+                    </style>
                 </div>
               </div>
               
