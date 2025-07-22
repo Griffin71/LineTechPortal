@@ -1,4 +1,4 @@
-<script>
+
   let tooltipTimeout;
 
   function toggleTooltip(button) {
@@ -25,4 +25,4 @@
       document.querySelectorAll('.tooltip').forEach(t => t.classList.remove('show'));
     }
   });
-</script>
+
