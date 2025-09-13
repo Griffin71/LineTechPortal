@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Line Tech - Plug into Possibility</title>
+  <!-- Alpine.js -->
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <link rel="icon" type="image/x-icon" href="Line Tech Logo 2.png">
   <link rel="stylesheet" href="tooltip.css">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -291,7 +297,7 @@
       <div class="flex justify-between items-center">
         <div class="flex items-center">
           <img src="Line Tech Logo 2.png" alt="Line Tech Logo" class="h-8 w-8 md:h-10 md:w-10 mr-2 rounded-full object-contain shadow-sm bg-white border border-gray-200" />
-          <span class="text-indigo-600 text-2xl font-bold">Line Tech</span>
+          <span class="text-indigo-600 text-2xl font-bold">Line Tech Softwares</span>
         </div>
         
         <div class="hidden md:flex space-x-8">
@@ -341,61 +347,128 @@
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Microsoft Installation -->
-        <div class="service-card bg-white rounded-lg shadow-lg p-8 border border-gray-100">
-          <div class="service-icon">
-            <i class="fab fa-windows text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Microsoft Installation</h3>
-          <p class="text-gray-600 mb-6">Professional Windows installation with all necessary drivers and essential software.</p>
-          <div class="space-y-2 mb-6">
-            <div class="flex justify-between">
-              <span>Student</span>
-              <span class="font-semibold">R600</span>
-            </div>
-            <div class="flex justify-between">
-              <span>Personal Use</span>
-              <span class="font-semibold">R1200</span>
-            </div>
-            <div class="flex justify-between">
-              <span>Business</span>
-              <span class="font-semibold">R1800</span>
-            </div>
-          </div>
-          <a href="#contact" class="block text-center bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition">Get Started</a>
-        </div>
-        
-        <!-- Linux Installation -->
-        <div class="service-card bg-white rounded-lg shadow-lg p-8 border border-gray-100">
-          <div class="service-icon">
-            <i class="fab fa-linux text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Linux Installation</h3>
-          <p class="text-gray-600 mb-6">Switch to Linux with our expert installation service. Perfect alternative to Windows.</p>
-          <div class="space-y-2 mb-6">
-            <div class="flex justify-between">
-              <span>Any Distribution</span>
-              <span class="font-semibold">R300</span>
-            </div>
-          </div>
-          <a href="#contact" class="block text-center bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition">Get Started</a>
-        </div>
-        
-        <!-- Password Recovery & Security -->
-        <div class="service-card bg-white rounded-lg shadow-lg p-8 border border-gray-100">
-          <div class="service-icon">
-            <i class="fas fa-shield-alt text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Password Recovery & Security</h3>
-          <p class="text-gray-600 mb-6">Recover your passwords, flush your laptop and install top-notch security against malware.</p>
-          <div class="space-y-2 mb-6">
-            <div class="flex justify-between">
-              <span>Recovery & Protection</span>
-              <span class="font-semibold">R250</span>
-            </div>
-          </div>
-          <a href="#contact" class="block text-center bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition">Get Started</a>
-        </div>
+
+       <!-- Microsoft Installation -->
+<!-- Microsoft Installation -->
+<div class="service-card bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+  <div class="service-icon mb-4">
+    <i class="fab fa-windows text-white text-2xl"></i>
+  </div>
+  <h3 class="text-xl font-bold mb-4">Microsoft Installation + Free Office Suite</h3>
+  <p class="text-gray-600 mb-6">
+    Professional Windows installation with all necessary drivers, essential software, and the full Microsoft Office suite (Word, Excel, PowerPoint) for <strong>free</strong>! Save big compared to official Microsoft pricing.
+  </p>
+
+  <div class="space-y-3 mb-6">
+    <!-- Pricing and savings table -->
+    <div class="flex justify-between">
+      <span>Student</span>
+      <div class="text-right">
+        <span class="line-through text-gray-400 mr-2">R1500</span>
+        <span class="font-semibold text-indigo-600">R750</span>
+        <span class="text-green-500 text-sm ml-2">Save R750!</span>
+      </div>
+    </div>
+    <div class="flex justify-between">
+      <span>Personal Use</span>
+      <div class="text-right">
+        <span class="line-through text-gray-400 mr-2">R3000</span>
+        <span class="font-semibold text-indigo-600">R1400</span>
+        <span class="text-green-500 text-sm ml-2">Save R1600!</span>
+      </div>
+    </div>
+    <div class="flex justify-between">
+      <span>Business</span>
+      <div class="text-right">
+        <span class="line-through text-gray-400 mr-2">R4500</span>
+        <span class="font-semibold text-indigo-600">R2200</span>
+        <span class="text-green-500 text-sm ml-2">Save R2300!</span>
+      </div>
+    </div>
+  </div>
+
+  <a href="#contact" class="block text-center bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition">
+    Get Started
+  </a>
+</div>
+
+  <!-- Linux Installation -->
+<div class="service-card bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+  <div class="service-icon">
+    <i class="fab fa-linux text-white text-2xl"></i>
+  </div>
+  <h3 class="text-xl font-bold mb-4">Linux Installation</h3>
+  <p class="text-gray-600 mb-6">Switch to Linux with our expert installation service. Perfect alternative to Windows.</p>
+  <div class="space-y-4 mb-6">
+    <div class="border rounded-lg p-4">
+      <h4 class="font-semibold mb-1">Basic Setup - R1000</h4>
+      <ul class="text-gray-600 list-disc list-inside text-sm">
+        <li>Core Linux installation</li>
+        <li>Default desktop environment</li>
+        <li>Essential drivers</li>
+      </ul>
+    </div>
+    <div class="border rounded-lg p-4">
+      <h4 class="font-semibold mb-1">Standard Setup - R1500</h4>
+      <ul class="text-gray-600 list-disc list-inside text-sm">
+        <li>Everything in Basic</li>
+        <li>System updates & security patches</li>
+        <li>Common utilities & apps installed</li>
+        <li>Minor customization options</li>
+      </ul>
+    </div>
+    <div class="border rounded-lg p-4">
+      <h4 class="font-semibold mb-1">Advanced Setup - R2000</h4>
+      <ul class="text-gray-600 list-disc list-inside text-sm">
+        <li>Everything in Standard</li>
+        <li>Full optimization & tweaks</li>
+        <li>Productivity tools & optional software</li>
+        <li>Custom configuration per user needs</li>
+      </ul>
+    </div>
+  </div>
+  <a href="#contact" class="block text-center bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition">Get Started</a>
+</div>
+
+
+<!-- Laptop Password Recovery & Security -->
+<div class="service-card bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+  <div class="service-icon">
+    <i class="fas fa-shield-alt text-white text-2xl"></i>
+  </div>
+  <h3 class="text-xl font-bold mb-4">Laptop Password Recovery & Security</h3>
+  <p class="text-gray-600 mb-6">Recover passwords, flush your laptop, and secure it with enterprise-grade protections.</p>
+  
+  <div class="space-y-4 mb-6">
+    <div class="border rounded-lg p-4">
+      <h4 class="font-semibold mb-1">Password Recovery - R1500</h4>
+      <ul class="text-gray-600 list-disc list-inside text-sm">
+        <li>Complete laptop password retrieval</li>
+        <li>Reset local & admin accounts safely</li>
+      </ul>
+    </div>
+    <div class="border rounded-lg p-4">
+      <h4 class="font-semibold mb-1">Premium Security Setup - R2500</h4>
+      <ul class="text-gray-600 list-disc list-inside text-sm">
+        <li>Professional antivirus & firewall installation</li>
+        <li>Malware scans and threat assessment</li>
+        <li>System updates & patches</li>
+      </ul>
+    </div>
+    <div class="border rounded-lg p-4">
+      <h4 class="font-semibold mb-1">Elite Security & Monitoring - R4000</h4>
+      <ul class="text-gray-600 list-disc list-inside text-sm">
+        <li>Everything in Premium Security</li>
+        <li>Real-time threat monitoring</li>
+        <li>Advanced system hardening</li>
+        <li>Custom security configurations tailored to your needs</li>
+      </ul>
+    </div>
+  </div>
+  
+  <a href="#contact" class="block text-center bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition">Get Started</a>
+</div>
+
         
         <!-- Website Development -->
         <div class="service-card bg-white rounded-lg shadow-lg p-8 border border-gray-100">
@@ -442,511 +515,499 @@
   </section>
 
   <!-- Website/App Calculator Section -->
-  <section id="calculator" class="py-20 bg-gray-50" x-data="calculatorData()">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Website & App Pricing Calculator</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Get an instant estimate for your custom website or app. Select your requirements below.</p>
-      </div>
+ <section id="calculator" class="py-20 bg-gray-50" x-data="calculatorData()">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Website & App Pricing Calculator</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Get an instant estimate for your custom website or app. Select your requirements below. Hover for more info.</p>
+    </div>
+
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
       
-      <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
-        <div class="mb-8">
-          <div class="flex justify-center items-center gap-4 mb-4">
-            <span :class="{ 'font-bold text-indigo-600': projectType === 'website' }">Website</span>
-            <label class="pricing-toggle">
-              <input type="checkbox" x-model="isApp" @change="toggleProjectType">
-              <span class="pricing-slider"></span>
-            </label>
-            <span :class="{ 'font-bold text-indigo-600': projectType === 'app' }">Mobile App</span>
-          </div>
-          <p class="text-gray-500 text-center text-sm">Choose between website or mobile app development</p>
+      <!-- Project Type -->
+      <div class="mb-8 text-center">
+        <h3 class="text-lg font-semibold mb-4">Project Type</h3>
+        <div class="flex justify-center items-center gap-4 mb-2">
+          <span :class="{ 'font-bold text-indigo-600': !isApp }">Website</span>
+          <label class="pricing-toggle cursor-pointer">
+            <input type="checkbox" x-model="isApp" @change="toggleProjectType" class="hidden">
+            <span class="pricing-slider block w-14 h-8 rounded-full bg-gray-300 relative transition-all"></span>
+          </label>
+          <span :class="{ 'font-bold text-indigo-600': isApp }">Mobile App</span>
         </div>
-        
-        <div class="mb-8">
-          <h3 class="text-lg font-semibold mb-4">Project Type</h3>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div 
-              @click="selectProjectPurpose('business')"
-              :class="{ 'selected': projectPurpose === 'business' }"
-              class="calculator-option border rounded-lg p-4 text-center">
-              <i class="fas fa-briefcase text-2xl mb-2 text-indigo-600"></i>
-              <p class="font-medium">Business</p>
-            </div>
-            <div 
-              @click="selectProjectPurpose('personal')"
-              :class="{ 'selected': projectPurpose === 'personal' }"
-              class="calculator-option border rounded-lg p-4 text-center">
-              <i class="fas fa-user text-2xl mb-2 text-indigo-600"></i>
-              <p class="font-medium">Personal</p>
-            </div>
-            <div 
-              @click="selectProjectPurpose('influencer')"
-              :class="{ 'selected': projectPurpose === 'influencer' }"
-              class="calculator-option border rounded-lg p-4 text-center">
-              <i class="fas fa-star text-2xl mb-2 text-indigo-600"></i>
-              <p class="font-medium">Influencer</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="mb-8">
-          <h3 class="text-lg font-semibold mb-4">Design Style</h3>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div 
-              @click="selectDesignStyle('simple')"
-              :class="{ 'selected': designStyle === 'simple' }"
-              class="calculator-option border rounded-lg p-4 text-center">
-              <i class="fas fa-feather text-2xl mb-2 text-indigo-600"></i>
-              <p class="font-medium">Simple & Clean</p>
-            </div>
-            <div 
-              @click="selectDesignStyle('modern')"
-              :class="{ 'selected': designStyle === 'modern' }"
-              class="calculator-option border rounded-lg p-4 text-center">
-              <i class="fas fa-laptop text-2xl mb-2 text-indigo-600"></i>
-              <p class="font-medium">Modern & Professional</p>
-            </div>
-            <div 
-              @click="selectDesignStyle('premium')"
-              :class="{ 'selected': designStyle === 'premium' }"
-              class="calculator-option border rounded-lg p-4 text-center">
-              <i class="fas fa-gem text-2xl mb-2 text-indigo-600"></i>
-              <p class="font-medium">Premium & Custom</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="mb-8">
-          <h3 class="text-lg font-semibold mb-4">Additional Features</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="border rounded-lg p-4">
-              <label class="flex items-center">
-                <input type="checkbox" x-model="features.ecommerce" @change="calculateTotal" class="h-5 w-5 text-indigo-600 feature-checkbox">
-                <span class="ml-2">E-commerce Functionality</span>
-              </label>
-            </div>
-            <div class="border rounded-lg p-4">
-              <label class="flex items-center">
-                <input type="checkbox" x-model="features.userAuth" @change="calculateTotal" class="h-5 w-5 text-indigo-600 feature-checkbox">
-                <span class="ml-2">User Login/Accounts</span>
-              </label>
-            </div>
-            <div class="border rounded-lg p-4">
-              <label class="flex items-center">
-                <input type="checkbox" x-model="features.apiIntegration" @change="calculateTotal" class="h-5 w-5 text-indigo-600 feature-checkbox">
-                <span class="ml-2">API Integration</span>
-              </label>
-            </div>
-            <div class="border rounded-lg p-4">
-              <label class="flex items-center">
-                <input type="checkbox" x-model="features.seo" @change="calculateTotal" class="h-5 w-5 text-indigo-600 feature-checkbox">
-                <span class="ml-2">SEO Optimization</span>
-              </label>
-            </div>
-            <div class="border rounded-lg p-4">
-              <label class="flex items-center">
-                <input type="checkbox" x-model="features.cms" @change="calculateTotal" class="h-5 w-5 text-indigo-600 feature-checkbox">
-                <span class="ml-2">Content Management</span>
-              </label>
-            </div>
-            <div class="border rounded-lg p-4">
-              <label class="flex items-center">
-                <input type="checkbox" x-model="features.multiLanguage" @change="calculateTotal" class="h-5 w-5 text-indigo-600 feature-checkbox">
-                <span class="ml-2">Multi-language Support</span>
-              </label>
-            </div>
-          </div>
-        </div>
-        
-        <div class="mb-8">
-          <h3 class="text-lg font-semibold mb-4">Turnaround Time</h3>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div 
-              @click="selectTurnaround('standard')"
-              :class="{ 'selected': turnaround === 'standard' }"
-              class="calculator-option border rounded-lg p-4 text-center">
-              <i class="fas fa-calendar text-2xl mb-2 text-indigo-600"></i>
-              <p class="font-medium">Standard</p>
-              <p class="text-xs text-gray-500">3-4 weeks</p>
-            </div>
-            <div 
-              @click="selectTurnaround('expedited')"
-              :class="{ 'selected': turnaround === 'expedited' }"
-              class="calculator-option border rounded-lg p-4 text-center">
-              <i class="fas fa-calendar-minus text-2xl mb-2 text-indigo-600"></i>
-              <p class="font-medium">Expedited</p>
-              <p class="text-xs text-gray-500">1-2 weeks</p>
-            </div>
-            <div 
-              @click="selectTurnaround('urgent')"
-              :class="{ 'selected': turnaround === 'urgent' }"
-              class="calculator-option border rounded-lg p-4 text-center">
-              <i class="fas fa-bolt text-2xl mb-2 text-indigo-600"></i>
-              <p class="font-medium">Urgent</p>
-              <p class="text-xs text-gray-500">Under 1 week</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="mb-8">
-          <h3 class="text-lg font-semibold mb-4">Maintenance Options</h3>
-          <div class="flex items-center gap-6 mb-4">
-            <label class="flex items-center cursor-pointer">
-              <input type="radio" x-model="maintenanceInterval" value="none" @change="calculateTotal" class="mr-2">
-              <span>No Maintenance</span>
-            </label>
-            <label class="flex items-center cursor-pointer">
-              <input type="radio" x-model="maintenanceInterval" value="monthly" @change="calculateTotal" class="mr-2">
-              <span>Monthly</span>
-            </label>
-            <label class="flex items-center cursor-pointer">
-              <input type="radio" x-model="maintenanceInterval" value="yearly" @change="calculateTotal" class="mr-2">
-              <span>Yearly</span>
-            </label>
-          </div>
+        <p class="text-gray-500 text-sm">Choose between website or mobile app development</p>
+      </div>
 
-          <!-- Monthly Plans -->
-          <template x-if="maintenanceInterval==='monthly'">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <template x-for="type in ['personal','business','influencer']" :key="type">
-                <div>
-                  <h4 class="font-medium capitalize mb-2" x-text="type"></h4>
-                  <label class="flex items-center mb-1 cursor-pointer">
-                    <input type="radio" :name="'maint-'+type" :value="'basic-'+type" x-model="maintenancePlan" @change="calculateTotal" class="mr-2">
-                    <span x-text="maintenanceRates.monthly[type].basicLabel"></span>
-                  </label>
-                  <label class="flex items-center mb-1 cursor-pointer">
-                    <input type="radio" :name="'maint-'+type" :value="'premium-'+type" x-model="maintenancePlan" @change="calculateTotal" class="mr-2">
-                    <span x-text="maintenanceRates.monthly[type].premiumLabel"></span>
-                  </label>
-                </div>
-              </template>
-            </div>
-          </template>
-
-          <!-- Yearly Plans -->
-          <template x-if="maintenanceInterval==='yearly'">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <template x-for="type in ['personal','business','influencer']" :key="type">
-                <label class="flex items-center border rounded-lg p-4 cursor-pointer"
-                       :class="maintenancePlan==='yearly-'+type?'border-indigo-600 bg-indigo-50':''">
-                  <input type="radio" :value="'yearly-'+type" x-model="maintenancePlan" @change="calculateTotal" class="mr-2">
-                  <div>
-                    <p class="font-medium capitalize" x-text="type"></p>
-                    <p class="text-sm text-gray-600" x-text="'R' + maintenanceRates.yearly[type]"></p>
-                  </div>
-                </label>
-              </template>
-            </div>
-          </template>
-        </div>
-        
-        <div class="bg-indigo-50 p-6 rounded-lg mb-8">
-          <div class="flex justify-between items-center">
-            <h3 class="text-xl font-bold">Estimated Total</h3>
-            <p class="text-2xl font-bold text-indigo-600">R<span x-text="totalPrice"></span></p>
+      <!-- Purpose -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold mb-4">Package Type</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div @click="selectProjectPurpose('personal')" 
+               :class="{'border-indigo-600 bg-indigo-50': projectPurpose==='personal'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-user text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Basic</p>
+            <p class="text-sm text-gray-500">Simple showcase, manual orders</p>
           </div>
-          <p class="text-sm text-gray-500 mt-2">This is an estimate. Final pricing may vary based on specific requirements.</p>
+          <div @click="selectProjectPurpose('business')" 
+               :class="{'border-indigo-600 bg-indigo-50': projectPurpose==='business'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-briefcase text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Standard</p>
+            <p class="text-sm text-gray-500">Online store, payment gateway, videos</p>
+          </div>
+          <div @click="selectProjectPurpose('influencer')" 
+               :class="{'border-indigo-600 bg-indigo-50': projectPurpose==='influencer'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-star text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Premium</p>
+            <p class="text-sm text-gray-500">Advanced features, marketing & subscriptions</p>
+          </div>
         </div>
-        
-        <div class="flex justify-between">
-          <button @click="resetCalculator" class="bg-gray-200 text-gray-800 py-2 px-6 rounded-md hover:bg-gray-300 transition">
-            Reset
-          </button>
-          <button @click="requestQuote()" class="bg-indigo-600 text-white py-2 px-6 rounded-md hover:bg-indigo-700 transition">
-            Request Quote
-          </button>
+      </div>
+
+      <!-- Design Style -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold mb-4">Design Style</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div @click="selectDesignStyle('simple')" 
+               :class="{'border-indigo-600 bg-indigo-50': designStyle==='simple'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-feather text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Simple & Clean</p>
+          </div>
+          <div @click="selectDesignStyle('modern')" 
+               :class="{'border-indigo-600 bg-indigo-50': designStyle==='modern'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-laptop text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Modern & Professional</p>
+          </div>
+          <div @click="selectDesignStyle('premium')" 
+               :class="{'border-indigo-600 bg-indigo-50': designStyle==='premium'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-gem text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Premium & Custom</p>
+          </div>
         </div>
+      </div>
+
+          <!-- Add-ons -->
+   <!-- Add-ons -->
+<div class="mb-8">
+  <h3 class="text-lg font-semibold mb-4">Optional Features / Add-ons</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <div class="border rounded-lg p-4">
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" x-model="features.ecommerce" @change="calculateTotal" class="mr-2 h-5 w-5 text-indigo-600">
+        E-commerce Functionality
+      </label>
+    </div>
+
+    <div class="border rounded-lg p-4">
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" x-model="features.userAuth" @change="calculateTotal" class="mr-2 h-5 w-5 text-indigo-600">
+        User Login / Accounts
+      </label>
+    </div>
+
+    <div class="border rounded-lg p-4">
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" x-model="features.apiIntegration" @change="calculateTotal" class="mr-2 h-5 w-5 text-indigo-600">
+        API Integration
+      </label>
+    </div>
+
+    <div class="border rounded-lg p-4">
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" x-model="features.seo" @change="calculateTotal" class="mr-2 h-5 w-5 text-indigo-600">
+        SEO Optimization
+      </label>
+    </div>
+
+    <div class="border rounded-lg p-4">
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" x-model="features.cms" @change="calculateTotal" class="mr-2 h-5 w-5 text-indigo-600">
+        Content Management
+      </label>
+    </div>
+
+    <div class="border rounded-lg p-4">
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" x-model="features.multiLanguage" @change="calculateTotal" class="mr-2 h-5 w-5 text-indigo-600">
+        Multi-language Support
+      </label>
+    </div>
+
+  </div>
+  <p class="text-sm text-gray-500 mt-2">Choosing **no maintenance** increases the cost of these features, especially if urgent.</p>
+</div>
+
+      <!-- Turnaround -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold mb-4">Turnaround Time</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div @click="selectTurnaround('standard')" 
+               :class="{'border-indigo-600 bg-indigo-50': turnaround==='standard'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-calendar text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Standard</p>
+            <p class="text-sm text-gray-500">3–4 weeks</p>
+          </div>
+          <div @click="selectTurnaround('expedited')" 
+               :class="{'border-indigo-600 bg-indigo-50': turnaround==='expedited'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-calendar-minus text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Expedited</p>
+            <p class="text-sm text-gray-500">1–2 weeks (+30%)</p>
+          </div>
+          <div @click="selectTurnaround('urgent')" 
+               :class="{'border-indigo-600 bg-indigo-50': turnaround==='urgent'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-bolt text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Urgent</p>
+            <p class="text-sm text-gray-500">Under 1 week (+60%)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maintenance -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold mb-4">Maintenance Options</h3>
+        <div class="flex items-center gap-6 mb-4">
+          <label class="flex items-center cursor-pointer">
+            <input type="radio" x-model="maintenanceInterval" value="none" @change="calculateTotal" class="mr-2">No Maintenance
+          </label>
+          <label class="flex items-center cursor-pointer">
+            <input type="radio" x-model="maintenanceInterval" value="monthly" @change="calculateTotal" class="mr-2">Monthly
+          </label>
+          <label class="flex items-center cursor-pointer">
+            <input type="radio" x-model="maintenanceInterval" value="yearly" @change="calculateTotal" class="mr-2">Yearly
+          </label>
+        </div>
+      </div>
+
+        <!-- Total -->
+  <div class="bg-indigo-50 p-6 rounded-lg mb-8 text-center">
+    <h3 class="text-xl font-bold mb-2">Estimated Total</h3>
+    <p class="text-2xl font-bold text-indigo-600">R<span x-text="totalPrice"></span></p>
+    <p class="text-sm text-gray-500 mt-2">
+      Selected Add-ons: <span x-text="selectedAddOns.join(', ') || 'None'"></span>
+    </p>
+    <p class="text-sm text-gray-500 mt-2">This is an estimate. Final pricing may vary based on your specific requirements. We’ll explain every step!</p>
+  </div>
+
+      <!-- Buttons -->
+      <div class="flex justify-between">
+        <button @click="resetCalculator()" class="bg-gray-200 text-gray-800 py-2 px-6 rounded-md hover:bg-gray-300 transition">Reset</button>
+        <button @click="downloadPDF()" class="bg-indigo-600 text-white py-2 px-6 rounded-md hover:bg-indigo-700 transition">Download Quote PDF</button>
+      </div>
+
+      <!--download bar/status-->
+      <!-- Download status & progress bar -->
+    <div class="mt-4">
+      <p class="text-sm text-gray-500" x-text="downloadStatus"></p>
+      <div class="w-full bg-gray-200 rounded-full h-3 mt-1">
+        <div class="bg-indigo-600 h-3 rounded-full transition-all" :style="'width:' + downloadProgress + '%'" ></div>
       </div>
     </div>
-  </section>
 
-  <!-- About Us Section -->
-  <section id="about" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">About Line Tech</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Learn more about our mission and what drives us to deliver exceptional IT services.</p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
-          <p class="text-gray-600 mb-6">At Line Tech, we are committed to helping individuals and businesses navigate the complex world of technology. Our mission is to make technology accessible, reliable, and powerful for everyone.</p>
-          
-          <h3 class="text-2xl font-bold mb-4">Why Choose Us?</h3>
-          <ul class="space-y-3">
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
-              <span>Expert team with years of experience in IT solutions</span>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
-              <span>Tailored services to meet your specific needs</span>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
-              <span>Transparent pricing with no hidden costs</span>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
-              <span>Ongoing support and maintenance for all our services</span>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
-              <span>Commitment to using the latest technologies and best practices</span>
-            </li>
+
+    </div>
+  </div>
+</section>
+
+  <section id="about" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="flex flex-col md:flex-row items-center md:items-start md:gap-12">
+        <!-- Left: Info -->
+        <div class="md:w-1/2 text-center md:text-left">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-indigo-600">About Line Tech</h2>
+          <p class="text-gray-700 mb-8">
+            At Line Tech, we are committed to helping individuals and businesses navigate the complex world of technology. 
+            Our mission is to make technology accessible, reliable, and powerful for everyone.
+          </p>
+          <h3 class="text-2xl font-semibold mb-4 text-gray-800">Why Choose Us?</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start"><span class="mr-2 text-indigo-600">•</span>Expert team with years of experience in IT solutions</li>
+            <li class="flex items-start"><span class="mr-2 text-indigo-600">•</span>Tailored services to meet your specific needs</li>
+            <li class="flex items-start"><span class="mr-2 text-indigo-600">•</span>Transparent pricing with no hidden costs</li>
+            <li class="flex items-start"><span class="mr-2 text-indigo-600">•</span>Ongoing support and maintenance for all our services</li>
+            <li class="flex items-start"><span class="mr-2 text-indigo-600">•</span>Commitment to using the latest technologies and best practices</li>
           </ul>
         </div>
-        
-        <div>
-          <img src="https://cdn.pixabay.com/photo/2015/01/08/18/24/children-593313_1280.jpg" alt="Team working together" class="rounded-lg shadow-xl">
+        <!-- Right: Image -->
+        <div class="md:w-1/2 mt-8 md:mt-0 flex flex-col items-center">
+          <img src="https://media.licdn.com/dms/image/v2/D4D12AQEeqFKpaDA6VQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1711258174043?e=2147483647&v=beta&t=Vldq2CWNwytdA0XwepLNnXH1RuC3xEU0k8Nexf-8IKw" 
+               alt="Team working together" 
+               class="rounded-lg shadow-xl mx-auto max-w-xs md:max-w-sm">
+          <p class="text-xs text-gray-500 mt-2 text-center">
+            Image by <a href="https://www.linkedin.com/pulse/collaborative-coding-practices-sabeeka-lambe-tagaf/" target="_blank" class="underline hover:text-indigo-600">Sabeeka Lambe</a> | Collaborative Coding Practices, March 26, 2024
+          </p>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Have questions or ready to get started? Get in touch with our team today.</p>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Have questions or ready to get started? Get in touch with our team today.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Left: Contact Form -->
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <form id="contact-form" novalidate>
+          <div class="mb-6">
+            <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+            <input type="text" id="name" name="user_name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your name" required>
+            <span id="error-name" class="text-red-500 text-sm hidden">Please enter your name.</span>
+          </div>
+          <div class="mb-6">
+            <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+            <input type="email" id="email" name="user_email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your email" required>
+            <span id="error-email" class="text-red-500 text-sm hidden">Please enter a valid email address.</span>
+          </div>
+          <div class="mb-6">
+            <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+            <div class="flex items-center">
+              <span class="mr-2 text-green-600 text-xl" title="South Africa">
+                <img src="https://flagcdn.com/za.svg" alt="ZA" class="inline-block h-6 w-8 rounded shadow-sm border border-gray-200" />
+              </span>
+              <input type="tel" id="phone" name="user_phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="e.g. 071 234 5678" pattern="^(\+27|0)[6-8][0-9]{8}$" required>
+            </div>
+            <span id="error-phone" class="text-red-500 text-sm hidden">Please enter a valid South African phone number.</span>
+          </div>
+          <div class="mb-6">
+            <label for="service" class="block text-gray-700 mb-2">Service Interested In</label>
+            <select id="service" name="user_service" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="">Select a service</option>
+              <option value="microsoft">Microsoft Installation</option>
+              <option value="linux">Linux Installation</option>
+              <option value="password">Password Recovery & Security</option>
+              <option value="website">Website Development</option>
+              <option value="app">App Development</option>
+              <option value="consulting">IT Consulting</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="mb-6">
+            <label for="message" class="block text-gray-700 mb-2">Message <span class="text-gray-400">(optional)</span></label>
+            <textarea id="message" name="user_message" rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Tell us more about your project or requirements"></textarea>
+          </div>
+          <button type="submit" class="bg-indigo-600 text-white py-3 px-6 rounded-lg hover:bg-indigo-700 transition w-full flex items-center justify-center gap-2">
+            <i class="fas fa-paper-plane"></i>
+            Send Message
+          </button>
+        </form>
+        <div id="form-success" class="mt-4 p-4 bg-green-100 text-green-700 rounded-lg hidden glossy-success">
+          Thank you for your message! We'll get back to you shortly.
+        </div>
+        <div id="form-error" class="mt-4 p-4 bg-red-100 text-red-700 rounded-lg hidden glossy-error">
+          Please fix the errors above and try again.
+        </div>
+        <style>
+  .glossy-success {
+    background: linear-gradient(135deg, #d1fae5 0%, #6ee7b7 100%);
+    box-shadow: 0 4px 24px rgba(16,185,129,0.18), 0 2px 8px rgba(0,0,0,0.08);
+    border: 2px solid #34d399;
+    position: relative;
+    overflow: hidden;
+    color: #065f46;
+    font-weight: 600;
+  }
+  .glossy-success::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 40%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.08) 100%);
+    border-radius: 0 0 1rem 1rem;
+    pointer-events: none;
+  }
+  .glossy-error {
+    background: linear-gradient(135deg, #fee2e2 0%, #f87171 100%);
+    box-shadow: 0 4px 24px rgba(239,68,68,0.18), 0 2px 8px rgba(0,0,0,0.08);
+    border: 2px solid #ef4444;
+    position: relative;
+    overflow: hidden;
+    color: #b91c1c;
+    font-weight: 600;
+  }
+  .glossy-error::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 40%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.08) 100%);
+    border-radius: 0 0 1rem 1rem;
+    pointer-events: none;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init('Ek4O3pznjchURi7UR');
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const errorName = document.getElementById('error-name');
+    const errorEmail = document.getElementById('error-email');
+    const errorPhone = document.getElementById('error-phone');
+    const formSuccess = document.getElementById('form-success');
+    const formError = document.getElementById('form-error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      // Name validation
+      if (!nameInput.value.trim()) {
+        errorName.classList.remove('hidden');
+        valid = false;
+      } else {
+        errorName.classList.add('hidden');
+      }
+
+      // Email validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailInput.value.trim() || !emailPattern.test(emailInput.value.trim())) {
+        errorEmail.classList.remove('hidden');
+        valid = false;
+      } else {
+        errorEmail.classList.add('hidden');
+      }
+
+      // Phone validation (South Africa)
+      const phonePattern = /^(\+27|0)[6-8][0-9]{8}$/;
+      if (!phoneInput.value.trim() || !phonePattern.test(phoneInput.value.trim().replace(/\s+/g, ''))) {
+        errorPhone.classList.remove('hidden');
+        valid = false;
+      } else {
+        errorPhone.classList.add('hidden');
+      }
+
+      if (!valid) {
+        formSuccess.classList.add('hidden');
+        formError.classList.remove('hidden');
+        formError.classList.add('glossy-error');
+        formError.textContent = 'Please fix the errors above and try again.';
+        return;
+      }
+
+      // Clear previous messages
+      formSuccess.classList.add('hidden');
+      formError.classList.add('hidden');
+
+      try {
+        await emailjs.sendForm(
+          'service_w9nn1gl',     // Your Service ID
+          'template_9lgbc28',    // Your Template ID
+          form,
+          'Ek4O3pznjchURi7UR'    // Your Public Key
+        );
+
+        formSuccess.classList.remove('hidden');
+        formSuccess.classList.add('glossy-success');
+        formSuccess.textContent = "Thank you! Your message was sent successfully. We'll get back to you soon.";
+        form.reset();
+      } catch (error) {
+        console.error('EmailJS Error:', error);
+        formError.classList.remove('hidden');
+        formError.classList.add('glossy-error');
+        formError.textContent = "Oops! Something went wrong. Please try again in a moment or contact us directly.";
+      }
+    });
+  });
+</script>
+
       </div>
-      
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div class="bg-white rounded-xl shadow-lg p-8">
-          <form id="contact-form">
-            <div class="mb-6">
-              <label for="name" class="block text-gray-700 mb-2">Full Name</label>
-              <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your name" required>
+      <!-- Right: Contact Info & Business Hours -->
+      <div class="flex flex-col h-full">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                <i class="fas fa-map-marker-alt text-indigo-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Our Location</h4>
+                <p class="text-gray-600">Pretoria, South Africa</p>
+              </div>
             </div>
-            
-            <div class="mb-6">
-              <label for="email" class="block text-gray-700 mb-2">Email Address</label>
-              <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your email" required>
+            <div class="flex items-start">
+              <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                <i class="fas fa-envelope text-indigo-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Email Us</h4>
+                <p class="text-gray-600 relative group">
+                  <span id="contact-email" class="inline-block transition-colors duration-200 hover:text-indigo-600 focus:text-indigo-600 cursor-pointer">
+                    info@linetechsoftwares.co.za
+                  </span>
+                </p>
+              </div>
             </div>
-            
-            <div class="mb-6">
-              <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
-              <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your phone number">
+            <div class="flex items-start">
+              <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                <i class="fas fa-phone-alt text-indigo-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Call Us</h4>
+                <p class="text-gray-600">
+                  <span class="block">For all inquiries, please contact our PA:</span>
+                  <span class="block font-medium">Keabetswe Kgaoane</span>
+                  <span class="block">
+                    <a href="tel:+27711831818" class="hover:text-indigo-600 transition">
+                      +27 71 183 1818
+                    </a>
+                  </span>
+                </p>
+              </div>
             </div>
-            
-            <div class="mb-6">
-              <label for="service" class="block text-gray-700 mb-2">Service Interested In</label>
-              <select id="service" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                <option value="">Select a service</option>
-                <option value="microsoft">Microsoft Installation</option>
-                <option value="linux">Linux Installation</option>
-                <option value="password">Password Recovery & Security</option>
-                <option value="website">Website Development</option>
-                <option value="app">App Development</option>
-                <option value="consulting">IT Consulting</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            
-            <div class="mb-6">
-              <label for="message" class="block text-gray-700 mb-2">Message</label>
-              <textarea id="message" rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Tell us more about your project or requirements" required></textarea>
-            </div>
-            
-            <button type="submit" class="bg-indigo-600 text-white py-3 px-6 rounded-lg hover:bg-indigo-700 transition w-full flex items-center justify-center gap-2">
-              <i class="fas fa-paper-plane"></i>
-              Send Message
-            </button>
-          </form>
-          <div id="form-success" class="mt-4 p-4 bg-green-100 text-green-700 rounded-lg hidden">
-            Thank you for your message! We'll get back to you shortly.
           </div>
         </div>
-        
-        <div class="flex flex-col justify-between">
-          <div>
-            <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
-            
-            <div class="space-y-6">
-              <div class="flex items-start">
-                <div class="bg-indigo-100 p-3 rounded-full mr-4">
-                  <i class="fas fa-map-marker-alt text-indigo-600"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold">Our Location</h4>
-                  <p class="text-gray-600">Pretoria, South Africa</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start">
-               
-                <div class="bg-indigo-100 p-3 rounded-full mr-4">
-                  <i class="fas fa-envelope text-indigo-600"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold">Email Us</h4>
-                    <p class="text-gray-600 relative group">
-                    <span id="contact-email" class="inline-block transition-colors duration-200 hover:text-indigo-600 focus:text-indigo-600 cursor-pointer">
-                      kabelosamkelo19@gmail.com
-                      <span class="relative group cursor-pointer ml-1 align-super">
-                      <span class="text-indigo-600 font-bold animate-pulse">?</span>
-                      </span>
-                    </span>
-                    <!-- Tooltip -->
-                    <span
-                      id="email-tooltip"
-                      class="absolute left-1/2 -translate-x-1/2 mt-2 w-64 bg-gray-900 text-white text-xs rounded-lg px-3 py-2 shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 z-50 scale-95 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:scale-100 border-2 border-indigo-400 animate-tooltipIn"
-                      style="bottom:100%;"
-                      tabindex="0"
-                    >
-                      <span class="inline-block animate-fadeInDown animate-delay-100">
-                      <span class="font-semibold text-indigo-400 animate-bounce">With your investment</span>
-                      <span class="block mt-1 animate-fadeInLeft">we can get a professional Gmail like <span class="underline decoration-indigo-400">info@linetech.co.za</span>.</span>
-                      </span>
-                    </span>
-                    </p>
-                    <script>
-                    // Tooltip for mobile: show on tap/click, hide on outside tap, auto-hide after 10s
-                    (function() {
-                      const email = document.getElementById('contact-email');
-                      const tooltip = document.getElementById('email-tooltip');
-                      let shown = false;
-                      let hideTimeout = null;
-                      function showTip() {
-                      tooltip.classList.add('opacity-100', 'pointer-events-auto', 'scale-100', 'animate-tooltipIn');
-                      tooltip.classList.remove('opacity-0', 'pointer-events-none', 'scale-95', 'animate-tooltipOut');
-                      shown = true;
-                      // Auto-hide after 10 seconds
-                      clearTimeout(hideTimeout);
-                      hideTimeout = setTimeout(() => {
-                        hideTip();
-                      }, 10000);
-                      }
-                      function hideTip() {
-                      tooltip.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100', 'animate-tooltipIn');
-                      tooltip.classList.add('opacity-0', 'pointer-events-none', 'scale-95', 'animate-tooltipOut');
-                      shown = false;
-                      clearTimeout(hideTimeout);
-                      }
-                      email.addEventListener('click', function(e) {
-                      e.stopPropagation();
-                      if (!shown) showTip(); else hideTip();
-                      });
-                      document.addEventListener('click', function(e) {
-                      if (shown && !email.contains(e.target)) hideTip();
-                      });
-                      // Keyboard accessibility
-                      email.addEventListener('keydown', function(e) {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        if (!shown) showTip(); else hideTip();
-                      }
-                      });
-                    })();
-                    </script>
-                    <style>
-                    /* Animations for tooltip text */
-                    @keyframes fadeInDown {
-                      from { opacity: 0; transform: translateY(-16px);}
-                      to { opacity: 1; transform: translateY(0);}
-                    }
-                    @keyframes fadeInLeft {
-                      from { opacity: 0; transform: translateX(-16px);}
-                      to { opacity: 1; transform: translateX(0);}
-                    }
-                    @keyframes tooltipIn {
-                      0% { opacity: 0; transform: scale(0.8) rotateX(-30deg);}
-                      60% { opacity: 1; transform: scale(1.05) rotateX(10deg);}
-                      100% { opacity: 1; transform: scale(1) rotateX(0);}
-                    }
-                    @keyframes tooltipOut {
-                      0% { opacity: 1; transform: scale(1) rotateX(0);}
-                      100% { opacity: 0; transform: scale(0.8) rotateX(-30deg);}
-                    }
-                    .animate-fadeInDown { animation: fadeInDown 0.4s cubic-bezier(.4,0,.2,1);}
-                    .animate-fadeInLeft { animation: fadeInLeft 0.5s cubic-bezier(.4,0,.2,1);}
-                    .animate-tooltipIn { animation: tooltipIn 0.5s cubic-bezier(.4,0,.2,1);}
-                    .animate-tooltipOut { animation: tooltipOut 0.3s cubic-bezier(.4,0,.2,1);}
-                    /* Effects: shadow, scale, border, and glow */
-                    #email-tooltip {
-                      box-shadow: 0 8px 32px 0 rgba(99,102,241,0.18), 0 2px 8px 0 rgba(0,0,0,0.08), 0 0 12px 2px #6366f1;
-                      transform: scale(0.95);
-                      border: 2px solid #6366f1;
-                      text-shadow: 0 2px 8px rgba(99,102,241,0.18);
-                      filter: drop-shadow(0 0 6px #a5b4fc);
-                    }
-                    #email-tooltip.scale-100 { transform: scale(1);}
-                    </style>
-                </div>
-              </div>
-              
-              <div class="flex items-start">
-                <div class="bg-indigo-100 p-3 rounded-full mr-4">
-                  <i class="fas fa-phone-alt text-indigo-600"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold">Call Us</h4>
-                  <p class="text-gray-600">
-                    <span class="block">
-                      <a href="tel:+27712433999" class="hover:text-indigo-600 transition">
-                        +27 71 243 3999
-                      </a>
-                    </span>
-                    <span class="block">
-                      <a href="tel:+27797586398" class="hover:text-indigo-600 transition">
-                        +27 79 758 6398
-                      </a>
-                    </span>
-                    <span class="block">
-                      <a href="tel:+27760552713" class="hover:text-indigo-600 transition">
-                        +27 76 055 2713
-                      </a>
-                    </span>
-                  </p>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="mt-8 bg-indigo-600 rounded-xl p-8 text-white">
-            <h3 class="text-xl font-bold mb-4">Business Hours</h3>
-            <ul class="space-y-2">
-              <li class="flex justify-between">
-                <span>Monday - Friday:</span>
-                <span>8:00 AM - 6:00 PM</span>
-              </li>
-              <li class="flex justify-between">
-                <span>Saturday:</span>
-                <span>9:00 AM - 3:00 PM</span>
-              </li>
-              <li class="flex justify-between">
-                <span>Sunday:</span>
-                <span>Closed</span>
-              </li>
-            </ul>
-            <div class="mt-6 flex flex-col items-center">
-              <div class="flex justify-between w-full max-w-xs mb-2">
-                <span class="text-white opacity-60 cursor-not-allowed flex-1 text-center">
-                  <i class="fab fa-facebook-f text-xl"></i>
-                </span>
-                <span class="text-white opacity-60 cursor-not-allowed flex-1 text-center">
-                  <i class="fab fa-twitter text-xl"></i>
-                </span>
-                <span class="text-white opacity-60 cursor-not-allowed flex-1 text-center">
-                  <i class="fab fa-instagram text-xl"></i>
-                </span>
-                <span class="text-white opacity-60 cursor-not-allowed flex-1 text-center">
-                  <i class="fab fa-linkedin-in text-xl"></i>
-                </span>
-              </div>
-              <span class="text-sm text-indigo-100 bg-indigo-700 px-3 py-1 rounded">
-                Social media accounts coming soon!
+        <div class="mt-8 bg-indigo-600 rounded-xl p-8 text-white">
+          <h3 class="text-xl font-bold mb-4">Business Hours</h3>
+          <ul class="space-y-2">
+            <li class="flex justify-between">
+              <span>Monday - Friday:</span>
+              <span>9:00 AM - 5:00 PM</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Saturday - Sunday:</span>
+              <span>Closed</span>
+            </li>
+          </ul>
+          <div class="mt-6 flex flex-col items-center">
+            <div class="flex justify-between w-full max-w-xs mb-2">
+              <span class="text-white opacity-60 cursor-not-allowed flex-1 text-center">
+                <i class="fab fa-facebook-f text-xl"></i>
+              </span>
+              <span class="text-white opacity-60 cursor-not-allowed flex-1 text-center">
+                <i class="fab fa-twitter text-xl"></i>
+              </span>
+              <span class="text-white opacity-60 cursor-not-allowed flex-1 text-center">
+                <i class="fab fa-instagram text-xl"></i>
+              </span>
+              <span class="text-white opacity-60 cursor-not-allowed flex-1 text-center">
+                <i class="fab fa-linkedin-in text-xl"></i>
               </span>
             </div>
+            <span class="text-sm text-indigo-100 bg-indigo-700 px-3 py-1 rounded">
+              Social media accounts coming soon!
+            </span>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
   
   <!-- Terms and Privacy Section -->
   <section class="py-20 bg-white">
@@ -1061,192 +1122,197 @@
             </li>
             <li class="flex items-center">
               <i class="fas fa-envelope mr-2 text-indigo-400"></i>
-              <span class="text-gray-400">kabelosamkelo19@gmail.com
+              <span class="text-gray-400">info@linetechsoftwares.co.za
                 <span class="relative group cursor-pointer ml-1 align-super">
-                  <span class="text-indigo-400 font-bold">?</span>
-                  <span class="absolute left-1/2 -translate-x-1/2 mt-2 w-64 bg-gray-900 text-white text-xs rounded-lg px-3 py-2 shadow-lg opacity-0 group-hover:opacity-100 group-focus:opacity-100 pointer-events-none transition-opacity z-50"
-                        style="bottom:100%;"
-                        tabindex="0">
-                    With your investment we can get a professional Gmail like info@linetech.co.za.
-                  </span>
+                
                 </span>
               </span>
             </li>
             <li class="flex items-center">
               <i class="fas fa-phone-alt mr-2 text-indigo-400"></i>
-              <span class="text-gray-400">+27 71 243 3999</span>
+              <span class="text-gray-400">+27 71 183 1818</span>
             </li>
           </ul>
         </div>
       </div>
       
       <div class="border-t border-gray-800 mt-10 pt-6 text-center">
-        <p class="text-gray-500">© 2025 Line Tech. All rights reserved.</p>
+        <p class="text-gray-500">© 2025 Line Tech Softwares. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <script id="app-script" defer>
-    // 1) Define calculatorData in global scope
-    function calculatorData() {
-      return {
-        isApp: false,
-        projectType: 'website',
-        projectPurpose: '',
-        designStyle: '',
-        turnaround: '',
-        features: {
-          ecommerce: false,
-          userAuth: false,
-          apiIntegration: false,
-          seo: false,
-          cms: false,
-          multiLanguage: false
-        },
-        maintenanceInterval: 'none',
-        maintenancePlan: null,
-        maintenanceRates: {
-          monthly: {
-            personal: { basic: 600, premium: 1200, basicLabel: 'Basic R600 (+R100 add-ons)', premiumLabel: 'Premium R1200 (+R100 add-ons)' },
-            business: { basic: 1000, premium: 1550, basicLabel: 'Basic R1000', premiumLabel: 'Premium R1550' },
-            influencer: { basic: 400, premium: 1400, basicLabel: 'Basic R400', premiumLabel: 'Premium R1400' }
-          },
-          yearly: {
-            personal: 6000,
-            business: 7600,
-            influencer: 5000
-          }
-        },
-        totalPrice: 0,
-        
-        toggleProjectType() {
-          this.projectType = this.isApp ? 'app' : 'website';
-          this.calculateTotal();
-        },
-        
-        selectProjectPurpose(purpose) {
-          this.projectPurpose = purpose;
-          this.calculateTotal();
-        },
-        
-        selectDesignStyle(style) {
-          this.designStyle = style;
-          this.calculateTotal();
-        },
-        
-        selectTurnaround(time) {
-          this.turnaround = time;
-          this.calculateTotal();
-        },
-        
-        calculateTotal() {
-          let basePrice = 0;
-          
-          // Base price by project type and purpose
-          if (this.projectType === 'website') {
-            if (this.projectPurpose === 'personal') basePrice = 3000;
-            else if (this.projectPurpose === 'business') basePrice = 5000;
-            else if (this.projectPurpose === 'influencer') basePrice = 4000;
-          } else { // App
-            if (this.projectPurpose === 'personal') basePrice = 6000;
-            else if (this.projectPurpose === 'business') basePrice = 10000;
-            else if (this.projectPurpose === 'influencer') basePrice = 8000;
-          }
-          
-          // Design style multiplier
-          let designMultiplier = 1;
-          if (this.designStyle === 'modern') designMultiplier = 4.25;
-          else if (this.designStyle === 'premium') designMultiplier = 5.5;
-          
-          // Apply design multiplier
-          basePrice = basePrice * designMultiplier;
-          
-          // Add feature costs
-          let featuresCost = 0;
-          if (this.features.ecommerce) featuresCost += this.projectType === 'website' ? 2000 : 3500;
-          if (this.features.userAuth) featuresCost += this.projectType === 'website' ? 1200 : 2000;
-          if (this.features.apiIntegration) featuresCost += this.projectType === 'website' ? 1500 : 2500;
-          if (this.features.seo) featuresCost += this.projectType === 'website' ? 1000 : 0;
-          if (this.features.cms) featuresCost += this.projectType === 'website' ? 1800 : 3000;
-          if (this.features.multiLanguage) featuresCost += this.projectType === 'website' ? 1200 : 2000;
-          
-          // Add turnaround cost
-          let turnaroundMultiplier = 1;
-          if (this.turnaround === 'expedited') turnaroundMultiplier = 8.25;
-          else if (this.turnaround === 'urgent') turnaroundMultiplier = 7.5;
-          
-          // Maintenance cost
-          let mCost = 0;
-          if (this.maintenanceInterval==='monthly' && this.maintenancePlan) {
-            const [plan, type] = this.maintenancePlan.split('-');
-            mCost = this.maintenanceRates.monthly[type][plan];
-          }
-          if (this.maintenanceInterval==='yearly' && this.maintenancePlan) {
-            const [, type] = this.maintenancePlan.split('-');
-            mCost = this.maintenanceRates.yearly[type];
-          }
-          
-          // Calculate total price
-          this.totalPrice = basePrice + featuresCost * turnaroundMultiplier + mCost;
-        },
-        
-        resetCalculator() {
-          this.isApp = false;
-          this.projectType = 'website';
-          this.projectPurpose = '';
-          this.designStyle = '';
-          this.turnaround = '';
-          this.features.ecommerce = false;
-          this.features.userAuth = false;
-          this.features.apiIntegration = false;
-          this.features.seo = false;
-          this.features.cms = false;
-          this.features.multiLanguage = false;
-          this.maintenanceInterval = 'none';
-          this.maintenancePlan = null;
-          this.calculateTotal();
-        },
-        
-        requestQuote: async function() {
-          const payload = {
-            designStyle: this.designStyle === 'simple' ? 'Simple' :
-                 this.designStyle === 'modern' ? 'Modern' : 'Premium',
-            platform: this.projectType === 'app' ? 'Mobile' : 'Web and Mobile',
-            features: [
-              this.features.ecommerce && 'E-commerce',
-              this.features.userAuth && 'User Login',
-              this.features.seo && 'SEO',
-              // skip false values
-            ].filter(Boolean),
-            turnaroundDays:
-              this.turnaround === 'standard' ? 21 :
-              this.turnaround === 'expedited' ? 10 : 5,
-            maintenance: this.maintenanceInterval==='none'
-              ? null
-              : { interval: this.maintenanceInterval, plan: this.maintenancePlan }
-          };
-          
-          try {
-            const res = await fetch(
-              'https://magicloops.dev/api/loop/5c9abb90-d7b1-42fa-9594-d374d9e0c06a/run',
-              {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-              }
-            );
-            const json = await res.json(); // { baseRate,…, totalPrice }
-            // update UI with returned total
-            this.totalPrice = json.totalPrice;
-            alert('Estimated at R' + json.totalPrice);
-          } catch(err) {
-            console.error(err);
-            alert('Could not calculate price. Please try again.');
-          }
+function calculatorData() {
+  return {
+    isApp: false,
+    projectPurpose: '',
+    designStyle: '',
+    turnaround: '',
+    features: {
+      ecommerce: false,
+      userAuth: false,
+      apiIntegration: false,
+      seo: false,
+      cms: false,
+      multiLanguage: false
+    },
+    featureLabels: {
+      ecommerce: 'E-commerce Functionality',
+      userAuth: 'User Login/Accounts',
+      apiIntegration: 'API Integration',
+      seo: 'SEO Optimization',
+      cms: 'Content Management',
+      multiLanguage: 'Multi-language Support'
+    },
+    maintenanceInterval: 'none',
+    maintenancePlan: null,
+    maintenanceRates: {
+      monthly: {
+        personal: { basic: 600, premium: 1200 },
+        business: { basic: 1000, premium: 1550 },
+        influencer: { basic: 400, premium: 1400 }
+      },
+      yearly: {
+        personal: 6000,
+        business: 7600,
+        influencer: 5000
+      }
+    },
+    totalPrice: 0,
+    downloadStatus: '',
+    downloadProgress: 0,
+
+    get selectedAddOns() {
+      return Object.keys(this.features)
+        .filter(k => this.features[k])
+        .map(k => this.featureLabels[k]);
+    },
+
+    toggleProjectType() { this.calculateTotal(); },
+    selectProjectPurpose(purpose) { this.projectPurpose = purpose; this.calculateTotal(); },
+    selectDesignStyle(style) { this.designStyle = style; this.calculateTotal(); },
+    selectTurnaround(time) { this.turnaround = time; this.calculateTotal(); },
+
+    calculateTotal() {
+      if (!this.projectPurpose || !this.designStyle || !this.turnaround) return;
+
+      let basePrice = !this.isApp
+        ? (this.projectPurpose === 'personal' ? 3000 : this.projectPurpose === 'business' ? 5000 : 4000)
+        : (this.projectPurpose === 'personal' ? 6000 : this.projectPurpose === 'business' ? 10000 : 8000);
+
+      let multiplier = this.designStyle === 'simple' ? 1 : this.designStyle === 'modern' ? 1.5 : 2;
+      basePrice *= multiplier;
+
+      let addOns = 0;
+      for (let key in this.features) {
+        if (this.features[key]) {
+          addOns += this.maintenanceInterval === 'none'
+            ? (key==='ecommerce'?3500:key==='userAuth'?2000:key==='apiIntegration'?2500:key==='seo'?2500:key==='cms'?3000:key==='multiLanguage'?2000:0)
+            : (key==='ecommerce'?2000:key==='userAuth'?1200:key==='apiIntegration'?1500:key==='seo'?1000:key==='cms'?1800:key==='multiLanguage'?1200:0);
         }
       }
+
+      let turnaroundMult = this.turnaround==='standard'?1:this.turnaround==='expedited'?1.3:1.6;
+
+      let mCost = 0;
+      if (this.maintenanceInterval==='monthly' && this.maintenancePlan) {
+        const [plan, type] = this.maintenancePlan.split('-');
+        mCost = this.maintenanceRates.monthly[type][plan];
+      }
+      if (this.maintenanceInterval==='yearly' && this.maintenancePlan) {
+        const [, type] = this.maintenancePlan.split('-');
+        mCost = this.maintenanceRates.yearly[type];
+      }
+
+      this.totalPrice = Math.round((basePrice + addOns) * turnaroundMult + mCost);
+    },
+
+    resetCalculator() {
+      this.isApp=false;
+      this.projectPurpose='';
+      this.designStyle='';
+      this.turnaround='';
+      for (let key in this.features) this.features[key]=false;
+      this.maintenanceInterval='none';
+      this.maintenancePlan=null;
+      this.totalPrice=0;
+      this.downloadStatus='';
+      this.downloadProgress=0;
+    },
+
+    downloadPDF() {
+      if (!this.projectPurpose || !this.designStyle || !this.turnaround) {
+        alert("Please select project type, package, and turnaround first 🙂");
+        return;
+      }
+
+      this.downloadStatus = 'Preparing your PDF...';
+      this.downloadProgress = 10;
+
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const logoUrl = 'Line Tech Logo 2.png';
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.src = logoUrl;
+
+      const progressInterval = setInterval(() => {
+        if (this.downloadProgress < 90) this.downloadProgress += 5;
+      }, 100);
+
+      img.onload = () => {
+        try {
+          const canvas = document.createElement('canvas');
+          canvas.width = img.width;
+          canvas.height = img.height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0);
+          const imgData = canvas.toDataURL('image/png');
+
+          doc.addImage(imgData, 'PNG', 10, 10, 40, 20);
+          this.downloadProgress = 95;
+
+          doc.setFontSize(14);
+          doc.text("Line Tech Softwares - Project Quote", 10, 40);
+          doc.setFontSize(12);
+          doc.text(`Project Type: ${this.isApp?'Mobile App':'Website'}`, 10, 50);
+          doc.text(`Package: ${this.projectPurpose.charAt(0).toUpperCase()+this.projectPurpose.slice(1)}`, 10, 58);
+          doc.text(`Design: ${this.designStyle}`, 10, 66);
+          doc.text(`Turnaround: ${this.turnaround} (multiplier applied)`, 10, 74);
+          doc.text(`Add-ons: ${this.selectedAddOns.join(', ') || 'None'}`, 10, 82);
+          doc.text(`Maintenance: ${this.maintenanceInterval} ${this.maintenancePlan || ''}`, 10, 90);
+          doc.text(`Estimated Total: R${this.totalPrice}`, 10, 98);
+          doc.text("This is an estimate. Final cost may vary based on your requirements.", 10, 110);
+
+          // Line Tech Contact Info
+          doc.setFontSize(12);
+doc.text("Contact:", 10, 120);
+
+doc.text("PA: Keabetswe Kgaoane", 10, 136);
+doc.text("+27 71 183 1818", 10, 144);
+doc.text("Email: info@linetechsoftwares.co.za", 10, 152);
+
+          doc.save('LineTech_Quote.pdf');
+          clearInterval(progressInterval);
+          this.downloadProgress = 100;
+          this.downloadStatus = 'PDF downloaded successfully ✅';
+        } catch(err) {
+          clearInterval(progressInterval);
+          this.downloadProgress = 0;
+          this.downloadStatus = "Oops! Something went wrong 😅. It's not your fault.";
+          console.error(err);
+        }
+      };
+
+      img.onerror = () => {
+        clearInterval(progressInterval);
+        this.downloadProgress = 0;
+        this.downloadStatus = "Could not load logo. Please try again.";
+      };
     }
-    
+  }
+}
     // Move the Alpine.data registration inside DOMContentLoaded
     document.addEventListener('DOMContentLoaded', function() {
       // Register Alpine data component after Alpine is available
@@ -1263,16 +1329,19 @@
           document.getElementById('mobile-menu').classList.toggle('hidden');
         });
       
-      // Contact form submission
+     
      
       });
 
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script src = submit.js></script>
+  
+
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="cookie.js"></script>
   <script src= "tooltip.js"></script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 
 </body>
 </html>
